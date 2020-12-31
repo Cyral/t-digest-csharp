@@ -1,7 +1,7 @@
 # T-Digest C#
 A .NET Core implementation of T-Digest. This is a nearly line-for-line port of the original Java reference implementation by Ted Dunning. 
 
-The AVL Tree version and histogram classes have not been ported as I do not need them for my own project, but I will welcome any PRs to add missing classes or keep this repo up to date. This version includes the MergingDigest class and all of the relevant unit tests.
+The AVL Tree version and histogram classes have not been ported as I do not need them for my own project, but I will welcome any PRs to add missing classes or keep this repo up to date. This version includes the MergingDigest class and most of the relevant unit tests.
 
 ## Installation
 ```
