@@ -98,33 +98,33 @@ namespace TDigest {
         public static bool UseWeightLimit = true;
 
         /**
-     * Allocates a buffer merging t-digest.  This is the normally used constructor that
-     * allocates default sized internal arrays.  Other versions are available, but should
-     * only be used for special cases.
-     *
-     * @param compression The compression factor
-     */
+         * Allocates a buffer merging t-digest.  This is the normally used constructor that
+         * allocates default sized internal arrays.  Other versions are available, but should
+         * only be used for special cases.
+         *
+         * @param compression The compression factor
+         */
         public MergingDigest(double compression) :
             this(compression, -1) { }
 
         /**
-     * If you know the size of the temporary buffer for incoming points, you can use this entry point.
-     *
-     * @param compression Compression factor for t-digest.  Same as 1/\delta in the paper.
-     * @param bufferSize  How many samples to retain before merging.
-     */
+         * If you know the size of the temporary buffer for incoming points, you can use this entry point.
+         *
+         * @param compression Compression factor for t-digest.  Same as 1/\delta in the paper.
+         * @param bufferSize  How many samples to retain before merging.
+         */
         public MergingDigest(double compression, int bufferSize) :
             this(compression, bufferSize, -1) {
             // we can guarantee that we only need ceiling(compression).
         }
 
         /**
-     * Fully specified constructor.  Normally only used for deserializing a buffer t-digest.
-     *
-     * @param compression Compression factor
-     * @param bufferSize  Number of temporary centroids
-     * @param size        Size of main buffer
-     */
+         * Fully specified constructor.  Normally only used for deserializing a buffer t-digest.
+         *
+         * @param compression Compression factor
+         * @param bufferSize  Number of temporary centroids
+         * @param size        Size of main buffer
+         */
         public MergingDigest(double compression, int bufferSize, int size) {
             // ensure compression >= 10
             // default size = 2 * ceil(compression)
@@ -217,8 +217,8 @@ namespace TDigest {
         }
 
         /**
-     * Turns on internal data recording.
-     */
+         * Turns on internal data recording.
+         */
         public override Digest RecordAllData() {
             base.RecordAllData();
             data = new List<List<double>>();
@@ -492,8 +492,8 @@ namespace TDigest {
         }
 
         /**
-     * Exposed for testing.
-     */
+         * Exposed for testing.
+         */
         int CheckWeights() {
             return CheckWeights(weight, totalWeight, lastUsedCell);
         }
@@ -538,11 +538,11 @@ namespace TDigest {
         }
 
         /**
-     * Merges any pending inputs and compresses the data down to the public setting.
-     * Note that this typically loses a bit of precision and thus isn't a thing to
-     * be doing all the time. It is best done only when we want to show results to
-     * the outside world.
-     */
+         * Merges any pending inputs and compresses the data down to the public setting.
+         * Note that this typically loses a bit of precision and thus isn't a thing to
+         * be doing all the time. It is best done only when we want to show results to
+         * the outside world.
+         */
         public override void Compress() {
             MergeNewValues(true, publicCompression);
         }
