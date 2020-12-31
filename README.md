@@ -3,6 +3,11 @@ A .NET Core implementation of T-Digest. This is a nearly line-for-line port of t
 
 The AVL Tree version and histogram classes have not been ported as I do not need them for my own project, but I will welcome any PRs to add missing classes or keep this repo up to date. This version includes the MergingDigest class and all of the relevant unit tests.
 
+## Installation
+```
+dotnet add package T-Digest --version 1.0.0
+```
+
 ## What is T-Digest?
 
 A new data structure for accurate on-line accumulation of rank-based statistics such as quantiles and trimmed means. The t-digest algorithm is also very friendly to parallel programs making it useful in map-reduce and parallel streaming applications implemented using, say, Apache Spark.
